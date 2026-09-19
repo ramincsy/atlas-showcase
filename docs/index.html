@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlas v3.19 — کاتالوگ محصول | DCIM · IPAM · NMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0c0e12;
+      --bg2: #131820;
+      --card: #181e27;
+      --line: #2c3544;
+      --text: #e8edf4;
+      --muted: #9aa3b2;
+      --accent: #5eead4;
+      --accent2: #7dd3fc;
+      --ok: #4ade80;
+      --warn: #f5c16c;
+      --bad: #f87171;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Vazirmatn, Tahoma, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.8;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    header.hero {
+      padding: 88px 0 56px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(900px 420px at 80% -10%, rgba(94, 234, 212, 0.08), transparent 60%),
+        var(--bg2);
+    }
+    .kicker {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      font-weight: 600;
+      margin: 0 0 14px;
+    }
+    h1 {
+      font-size: clamp(28px, 3.6vw, 44px);
+      line-height: 1.3;
+      margin: 0 0 18px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .lede {
+      color: var(--muted);
+      font-size: 16.5px;
+      line-height: 1.9;
+      max-width: 640px;
+      margin: 0 0 36px;
+      font-weight: 400;
+    }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 18px 18px 16px;
+    }
+    .stat b { display: block; font-size: 22px; font-weight: 700; letter-spacing: -0.03em; }
+    .stat span { color: var(--muted); font-size: 12px; font-weight: 500; }
+    nav.toc {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(12, 14, 18, 0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    nav.toc .wrap { display: flex; gap: 6px; flex-wrap: wrap; padding: 12px 0; align-items: center; }
+    .chip {
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      padding: 5px 12px;
+      font: inherit;
+      font-size: 12.5px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 999px;
+    }
+    .chip.is-on, .chip:hover { border-color: var(--accent); color: var(--accent); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      padding: 40px 0 8px;
+    }
+    .tile {
+      background: var(--card);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .tile img { height: 168px; width: 100%; object-fit: cover; object-position: top; }
+    .tile .meta { padding: 14px 16px 16px; }
+    .tile .tag {
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+    }
+    .tile h3 { margin: 6px 0 4px; font-size: 15.5px; font-weight: 600; letter-spacing: -0.02em; }
+    .tile p { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.65; }
+    section.mod { padding: 64px 0; border-top: 1px solid var(--line); }
+    .mod h2 {
+      font-size: 24px;
+      margin: 0 0 10px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.4;
+    }
+    .mod .why {
+      color: var(--muted);
+      margin: 0 0 24px;
+      max-width: 720px;
+      font-size: 15px;
+      line-height: 1.85;
+    }
+    figure.shot {
+      margin: 0 0 22px;
+      border: 1px solid var(--line);
+      background: #07090d;
+      overflow: hidden;
+    }
+    figure.shot img {
+      width: 100%;
+      min-height: 440px;
+      max-height: 720px;
+      object-fit: contain;
+      object-position: top;
+      background: #07090d;
+    }
+    .shot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 0 0 22px;
+    }
+    .shot-grid figure.shot { margin: 0; }
+    .shot-grid figure.shot img { min-height: 240px; max-height: 380px; }
+    figcaption {
+      padding: 12px 16px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.7;
+      background: var(--card);
+      border-top: 1px solid var(--line);
+    }
+    .bullets { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .bullets article {
+      background: var(--bg2);
+      border: 1px solid var(--line);
+      padding: 16px 18px 18px;
+    }
+    .bullets h4 {
+      margin: 0 0 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent2);
+      letter-spacing: 0.04em;
+    }
+    .bullets p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th, td { border: 1px solid var(--line); padding: 11px 13px; text-align: right; vertical-align: top; }
+    th { background: var(--bg2); font-weight: 600; font-size: 12.5px; }
+    .yes { color: var(--ok); }
+    .mid { color: var(--warn); }
+    .no { color: var(--bad); }
+    footer {
+      padding: 48px 0 72px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+      border-top: 1px solid var(--line);
+    }
+    footer code { font-size: 12px; color: var(--text); }
+    @media (max-width: 900px) {
+      .stats, .gallery, .bullets, .shot-grid { grid-template-columns: 1fr; }
+      figure.shot img { min-height: 220px; }
+    }
+    @media print {
+      nav.toc { display: none; }
+      header.hero, section.mod { break-inside: avoid; }
+      body { background: #fff; color: #111; }
+      .lede, .stat span, .tile p, .why, figcaption, .bullets p, footer { color: #444; }
+      .stat, .tile, .bullets article, figure.shot { border-color: #ccc; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="kicker">ATLAS · v3.19 · DCIM · IPAM · NMS</p>
+      <h1>سامانهٔ سازمانی زیرساخت شبکه<br />از سالن سه‌بعدی تا پایش SNMP.</h1>
+      <p class="lede">
+        Atlas یک محصول کامل برای مستندسازی، ظرفیت و عملیات شبکه است — DCIM فیزیکی در کنار IPAM، مدار WAN، کشف CDP/LLDP و مانیتورینگ زنده.
+        استقرار داخل سازمان، رابط فارسی، و پوشش هلدینگ چندسایته در چند شهر.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>۵ سایت</b><span>تهران · تبریز · اصفهان · مشهد</span></div>
+        <div class="stat"><b>۱٬۰۰۰+</b><span>تجهیز در دیتاسنتر مرکزی</span></div>
+        <div class="stat"><b>۶٬۲۰۰+</b><span>مدل کاتالوگ با عکس جلو و عقب</span></div>
+        <div class="stat"><b>A / B</b><span>UPS دو مسیر · پوشش ۵۳ دقیقه</span></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <div class="wrap">
+      <button class="chip is-on" data-filter="all" type="button">همه</button>
+      <button class="chip" data-filter="dcim" type="button">DCIM / ۳D</button>
+      <button class="chip" data-filter="net" type="button">شبکه / IPAM</button>
+      <button class="chip" data-filter="mon" type="button">مانیتورینگ</button>
+      <button class="chip" data-filter="ops" type="button">عملیات</button>
+      <a class="chip" href="#compare">مقایسه با رقبا</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <div class="gallery" id="gallery">
+      <a class="tile" data-cat="ops" href="#m-dash"><img src="shots/01-dashboard.png" alt="" /><div class="meta"><div class="tag">OPS</div><h3>داشبورد فرمان</h3><p>KPI، نقشه ایران و سلامت هلدینگ</p></div></a>
+      <a class="tile" data-cat="ops" href="#m-proj"><img src="shots/02-projects.png" alt="" /><div class="meta"><div class="tag">OPS</div><h3>پورتفوی سایت‌ها</h3><p>دیتاسنتر، دفتر، نیروگاه، گلخانه</p></div></a>
+      <a class="tile" data-cat="ops" href="#m-over"><img src="shots/03-overview.png" alt="" /><div class="meta"><div class="tag">OPS</div><h3>نمای پروژه</h3><p>بودجه، پهنا، UPS و مدار</p></div></a>
+      <a class="tile" data-cat="dcim" href="#m-3d"><img src="shots/04-dcim-3d.png" alt="" /><div class="meta"><div class="tag">DCIM</div><h3>سالن سه‌بعدی</h3><p>رک، In-Row، UPS از چند زاویه</p></div></a>
+      <a class="tile" data-cat="net" href="#m-topo"><img src="shots/05-topology.png" alt="" /><div class="meta"><div class="tag">NET</div><h3>توپولوژی لایه‌ای</h3><p>WAN تا Leaf روی پنج طبقهٔ خوانا</p></div></a>
+      <a class="tile" data-cat="net" href="#m-ipam"><img src="shots/06-ipam-vlan.png" alt="" /><div class="meta"><div class="tag">IPAM</div><h3>VLAN و ظرفیت IP</h3><p>10.48.0.0/16 با نقش هر سابنت</p></div></a>
+      <a class="tile" data-cat="mon" href="#m-ups"><img src="shots/07-ups.png" alt="" /><div class="meta"><div class="tag">POWER</div><h3>زنجیره UPS</h3><p>مسیر A/B · بار و runtime</p></div></a>
+      <a class="tile" data-cat="mon" href="#m-disc"><img src="shots/08-discovery.png" alt="" /><div class="meta"><div class="tag">NMS</div><h3>کشف CDP/LLDP</h3><p>Walk فابریک دیتاسنتر</p></div></a>
+      <a class="tile" data-cat="mon" href="#m-live"><img src="shots/09-monitoring.png" alt="" /><div class="meta"><div class="tag">NMS</div><h3>مانیتورینگ زنده</h3><p>قطع، آستانه و سالم روی گراف</p></div></a>
+      <a class="tile" data-cat="dcim" href="#m-cat"><img src="shots/10-catalog.png" alt="" /><div class="meta"><div class="tag">DCIM</div><h3>کتابخانه مدل</h3><p>عکس جلو و عقب چند برند</p></div></a>
+      <a class="tile" data-cat="net" href="#m-cir"><img src="shots/11-circuits.png" alt="" /><div class="meta"><div class="tag">WAN</div><h3>مدار و ISP</h3><p>DIA، MPLS، فیبر و شعب</p></div></a>
+      <a class="tile" data-cat="dcim" href="#m-site"><img src="shots/12-site-layout.png" alt="" /><div class="meta"><div class="tag">DCIM</div><h3>جانمایی سایت</h3><p>پلان محوطه و اتاق‌های فنی</p></div></a>
+    </div>
+  </div>
+
+  <section class="mod" id="m-dash">
+    <div class="wrap">
+      <p class="kicker">01 · COMMAND CENTER</p>
+      <h2>داشبورد مدیریتی — سلامت هلدینگ در یک صفحه</h2>
+      <p class="why">عدد درشت، رنگ وضعیت، و نقشهٔ ایران با پین هر شهر. مدیر شبکه بدون ورود به رک می‌بیند کدام سایت در چه وضعیتی است.</p>
+      <figure class="shot">
+        <img src="shots/01-dashboard.png" alt="داشبورد Atlas با KPI و نقشه ایران" />
+        <figcaption>پنج سایت فعال · تهران، تبریز، اصفهان، مشهد · هشدار، تجهیز و مدار در یک نگاه</figcaption>
+      </figure>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>کارت شهر، پروژه، تجهیز، مدار، IP و هشدار — صفر هشدار یعنی سبز، نه سکوت.</p></article>
+        <article><h4>کاربرد</h4><p>نقشهٔ ایران با پین جغرافیایی کنار رویدادهای NOC، As-Built و BOM.</p></article>
+        <article><h4>جزئیات</h4><p>تم تیره برای اتاق فرمان، سایدبار فارسی، اعلان خوانده‌نشده روی زنگ.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="m-proj">
+    <div class="wrap">
+      <p class="kicker">02 · PORTFOLIO</p>
+      <h2>سایت‌ها — هر محل یک کارت با عکس صحنه</h2>
+      <p class="why">هلدینگ چندسایته: دیتاسنتر تهران، دفتر مرکزی تبریز، نیروگاه بعثت تهران، گلخانه هوشمند اصفهان و دفتر منطقه مشهد. کاور پروژه نمای مکان است، نه فیس‌پلیت سوئیچ.</p>
+      <figure class="shot">
+        <img src="shots/02-projects.png" alt="کارت‌های پروژه Atlas" />
+        <figcaption>کاور سالن سرور، دفتر، نیروگاه و گلخانه — فیلتر نوع سایت و درصد پیشرفت</figcaption>
+      </figure>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>فیلتر نوع سایت، وضعیت اجرا، و عکس صحنه برای هر شهر.</p></article>
+        <article><h4>کاربرد</h4><p>عکس محصول فقط در کاتالوگ تجهیزات است؛ هویت سایت از صحنهٔ واقعی می‌آید.</p></article>
+        <article><h4>جزئیات</h4><p>سازمان واحد، چند شهر، پیشرفت و بودجه روی کارت.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="m-over">
+    <div class="wrap">
+      <p class="kicker">03 · PROJECT BRIEF</p>
+      <h2>نمای پروژه — بودجه، پهنا، UPS و مدار کنار هم</h2>
+      <p class="why">یک صفحهٔ اجرایی برای مدیر پروژه: ظرفیت فیزیکی، شبکه و مالی در یک نگاه.</p>
+      <figure class="shot">
+        <img src="shots/03-overview.png" alt="نمای کلی پروژه دیتاسنتر اطلس" />
+        <figcaption>دیتاسنتر مرکزی اطلس · تهران · پهنای ورود، مدار فعال و پوشش UPS روی همان صفحه</figcaption>
+      </figure>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>کاور سالن، حلقهٔ پیشرفت، تاریخ شروع/پایان و بودجه.</p></article>
+        <article><h4>کاربرد</h4><p>عدد پهنا و runtime UPS جایی است که تصمیم عملیاتی گرفته می‌شود.</p></article>
+        <article><h4>جزئیات</h4><p>نقش مدیر سیستم · وضعیت در حال اجرا · شهر تهران.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="m-3d">
+    <div class="wrap">
+      <p class="kicker">04 · 3D DIGITAL TWIN</p>
+      <h2>سالن سرور سه‌بعدی — چند زاویه از اتاق، رک و سرمایش</h2>
+      <p class="why">
+        الگوی
+        <a href="https://www.sunbirddcim.com/screen-shots/3d-visualization">Sunbird 3D Visualization</a>:
+        راهروی رک، محتویات کابینت، In-Row، و اتاق برق. چرخش، زوم و پیش‌تنظیم زاویه (راهرو، سرمایش، UPS، از بالا).
+      </p>
+      <div class="shot-grid">
+        <figure class="shot">
+          <img src="shots/04-dcim-3d.png" alt="نمای راهروی سالن سرور" />
+          <figcaption>راهرو · X-Ray · ردیف رک و کف کاذب</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="shots/04b-dcim-cooling.png" alt="نمای سرمایش In-Row" />
+          <figcaption>سرمایش · کولر In-Row بین ردیف‌ها</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="shots/04c-dcim-ups.png" alt="اتاق UPS و برق" />
+          <figcaption>اتاق برق · UPS دو مسیر A/B</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="shots/04d-dcim-top.png" alt="نمای بالای سالن سرور" />
+          <figcaption>از بالا · چیدمان رک، سرمایش و تری کابل</figcaption>
+        </figure>
+      </div>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>دو راهروی رک، In-Row، لوله سقف، ستون، کف کاذب و یونیت UPS.</p></article>
+        <article><h4>کاربرد</h4><p>قبل از ورود به سالن، ظرفیت U و مسیر سرمایش دیده می‌شود.</p></article>
+        <article><h4>جزئیات</h4><p>اتاق‌ها: سالن اصلی، MMR، TR، NOC، برق. حالت درب بسته / باز / X-Ray / اسکلت.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="m-topo">
+    <div class="wrap">
+      <p class="kicker">05 · SPINE-LEAF</p>
+      <h2>توپولوژی لایه‌ای — از اینترنت تا سرویس، خوانا</h2>
+      <p class="why">پنج طبقهٔ استاندارد: WAN، لبه HA، Spine ۱۰۰G، Leaf، سپس سرور و برق. الگوی Cisco بدون تقاطع برچسب؛ ذخیره همان طرح پروژه است.</p>
+      <figure class="shot">
+        <img src="shots/05-topology.png" alt="ویرایشگر توپولوژی Spine-Leaf" />
+        <figcaption>مخابرات / ایرانسل / MPLS → ASR و FortiGate HA → SPINE-1/2 → Leaf گروه A و B · DMZ و UPS جدا</figcaption>
+      </figure>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>برچسب لایه در سمت راست بوم، یال کوتاه (100G / 10G / HA)، پالت جمع‌شو.</p></article>
+        <article><h4>کاربرد</h4><p>نقشه طراحی و گراف کشف در یک محصول‌اند؛ HLD همان جایی است که عملیات انجام می‌شود.</p></article>
+        <article><h4>جزئیات</h4><p>Peer-Link ۱۰۰G · لبه HA · پردیس CORE و TR · UPS دو مسیر روی لایه سرویس.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="m-ipam">
+    <div class="wrap">
+      <p class="kicker">06 · IPAM</p>
+      <h2>VLAN و ظرفیت IP — بدون اکسل</h2>
+      <p class="why">نقش هر VLAN مشخص است: Management، Servers، Storage، Voice، CCTV، Guest، DMZ، WiFi روی 10.48.0.0/16.</p>
+      <figure class="shot">
+        <img src="shots/06-ipam-vlan.png" alt="جدول VLAN با CIDR و تعداد IP مشغول" />
+        <figcaption>مثال: VLAN 10 Management · 10.48.10.0/24 · شمارش IP آزاد و مشغول</figcaption>
+      </figure>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>VLAN ID، نام، CIDR، گیت‌وی، وضعیت active، شمارش IP آزاد.</p></article>
+        <article><h4>کاربرد</h4><p>نقش VLAN پروژه جدا از نام است؛ CSV ورود/خروج برای ممیزی.</p></article>
+        <article><h4>جزئیات</h4><p>سابنت‌های 10.48.10 تا 10.48.80 طبق طرح آدرس‌دهی سازمانی.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="m-ups">
+    <div class="wrap">
+      <p class="kicker">07 · POWER</p>
+      <h2>UPS — ظرفیت، بار و runtime در یک نوار</h2>
+      <p class="why">درصد بار روی ظرفیت نامی، دقیقهٔ باتری باقی‌مانده، و مسیر A/B جدا. اگر بار تجهیزات با خروجی UPS نخواند، همان کارت نشان می‌دهد.</p>
+      <figure class="shot">
+        <img src="shots/07-ups.png" alt="هاب UPS و SNMP با نوار ظرفیت و runtime" />
+        <figcaption>UPS-A / UPS-B مسیر دوگانه · بار و runtime روی یک نوار · SNMP خوانده‌شده از خود یونیت</figcaption>
+      </figure>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>کارت runtime، ظرفیت به وات، درصد بار، مدل APC Galaxy.</p></article>
+        <article><h4>کاربرد</h4><p>قطع یک مسیر سالن را خاموش نمی‌کند؛ مسیر A و B در رک جدا از باتری‌بانک اتاق برق است.</p></article>
+        <article><h4>جزئیات</h4><p>خواندن SNMP روی خود UPS ذخیره می‌شود؛ اسکن کشف را خراب نمی‌کند.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="m-disc">
+    <div class="wrap">
+      <p class="kicker">08 · DISCOVERY</p>
+      <h2>کشف شبکه — CDP و LLDP روی یک گراف</h2>
+      <p class="why">گراف از Walk همسایه ساخته می‌شود نه از کشیدن دستی. فیلتر زیرساخت درخت Spine/Leaf را جدا می‌کند؛ پایانه و UPS روی لایهٔ دیگر می‌مانند.</p>
+      <figure class="shot">
+        <img src="shots/08-discovery.png" alt="گراف کشف فابریک دیتاسنتر با CDP و LLDP" />
+        <figcaption>Walk از SPINE-1 روی 10.48.0.0/16 · یال CDP و LLDP · لجند نوع کابل</figcaption>
+      </figure>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>نودهای هسته و دسترسی با لینک رنگی، MiniMap، جدول همسایه زیر گراف.</p></article>
+        <article><h4>کاربرد</h4><p>کشف گراف طراحی را عوض نمی‌کند؛ دکمهٔ «از Discovery» همان داده را به توپولوژی می‌آورد.</p></article>
+        <article><h4>جزئیات</h4><p>پروتکل یال (CDP / LLDP / هر دو) روی لجند است؛ چاپ و تصویر از همان بوم.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="m-live">
+    <div class="wrap">
+      <p class="kicker">09 · LIVE MONITOR</p>
+      <h2>مانیتورینگ زنده — چه چیزی down است</h2>
+      <p class="why">رنگ نود یعنی سطح ناهنجاری. ICMP و SNMP سبک روی همان فابریک overlay می‌شود. قرمز قطع، زرد آستانه، سبز سالم.</p>
+      <figure class="shot">
+        <img src="shots/09-monitoring.png" alt="weathermap زنده با هشدار دما و ICMP" />
+        <figcaption>دمای بحرانی SPINE-2 · CPU لبه · قطع ICMP روی TR-ACC-01 · بقیه سبز روی Spine-Leaf</figcaption>
+      </figure>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>ستون هشدار با علت مشخص، weathermap رنگی، پرش از هشدار به نود.</p></article>
+        <article><h4>کاربرد</h4><p>NOC در یک نگاه می‌بیند کدام لینک یا دستگاه مشکل دارد.</p></article>
+        <article><h4>جزئیات</h4><p>آستانه دما/CPU/حافظه قابل تنظیم است؛ فیلتر «فقط هشدارها» همان نودها را دوباره می‌چیند.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="m-cat">
+    <div class="wrap">
+      <p class="kicker">10 · MODELS LIBRARY</p>
+      <h2>کاتالوگ تجهیزات — جلو و عقب، چند برند</h2>
+      <p class="why">مدل بدون عکس در رک ۳D جعبه خاکستری است. اینجا همان فایل روی فیس‌پلیت می‌نشیند: سوئیچ، فایروال، سرور، UPS — عکس جلو و عقب روی زمینه روشن.</p>
+      <figure class="shot">
+        <img src="shots/10-catalog.png" alt="کتابخانه مدل با عکس جلو و عقب چند برند" />
+        <figcaption>حالت مدل · فیلتر «با عکس» · کارت دوتایی جلو / عقب برای برندهای مختلف</figcaption>
+      </figure>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>شبکه مدل با پس‌زمینه روشن، شمارش عکس، برچسب مجموعه، فیلتر برند و نوع.</p></article>
+        <article><h4>کاربرد</h4><p>شناسایی مدل هنگام نصب و مستندسازی رک؛ کاور پروژه صحنهٔ سایت می‌ماند.</p></article>
+        <article><h4>جزئیات</h4><p>چند هزار مدل با تصویر جلو و عقب؛ تکمیل آنلاین برای مدل بدون عکس.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="m-cir">
+    <div class="wrap">
+      <p class="kicker">11 · CONNECTIVITY</p>
+      <h2>مدار و اینترنت — از دیتاسنتر تا شهرهای هلدینگ</h2>
+      <p class="why">ISP در چپ، ابر MPLS بالا، دیتاسنتر مرکز، سایت‌ها در راست: نیروگاه تهران، گلخانه اصفهان، دفتر تبریز و دفتر مشهد. برچسب یال کوتاه است (DIA 1G، MPLS، فیبر ۱۰G).</p>
+      <figure class="shot">
+        <img src="shots/11-circuits.png" alt="نقشه مدارهای اینترنت و لینک سازمانی" />
+        <figcaption>DIA مخابرات و ایرانسل · MPLS و P2P به شعب · فیبر تاریک به اصفهان</figcaption>
+      </figure>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>نقشه اینترنت با رنگ گره، خروجی PDF/PNG/CSV، قالب لینک.</p></article>
+        <article><h4>کاربرد</h4><p>مدار در IPAM و توپولوژی همان پروژه است؛ منبع حقیقت یکی است.</p></article>
+        <article><h4>جزئیات</h4><p>ورود/خروج، کراس‌کانکت، مانیتورینگ و رخدادها تب جدا دارند.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="m-site">
+    <div class="wrap">
+      <p class="kicker">12 · SITE PLAN</p>
+      <h2>جانمایی سایت — پلان محوطه، نه فقط اتاق</h2>
+      <p class="why">طبقهٔ بالاتر از ۳D رک: ساختمان، همکف، ابزار رسم دیوار و برچسب.</p>
+      <figure class="shot">
+        <img src="shots/12-site-layout.png" alt="استودیوی جانمایی سایت" />
+        <figcaption>محوطه پردیس دیتاسنتر · نقشه همکف با MMR، White Space، UPS و NOC</figcaption>
+      </figure>
+      <div class="bullets">
+        <article><h4>قابلیت</h4><p>کارت نقشه، بوم CAD، ویژگی عنصر، مختصات.</p></article>
+        <article><h4>کاربرد</h4><p>از Visio می‌توان اتاق DCIM ساخت؛ پلان سایت جدا از چیدمان رک می‌ماند.</p></article>
+        <article><h4>جزئیات</h4><p>زوم، تمام‌صفحه، نقشهٔ جدید، لایه‌بندی عناصر.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="compare">
+    <div class="wrap">
+      <p class="kicker">POSITIONING</p>
+      <h2>Atlas کجای بازار می‌ایستد</h2>
+      <p class="why">هدف پوشش همان شغل‌ها در یک محصول فارسیِ داخل سازمان است، نه کپی برند خارجی.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>قابلیت</th>
+            <th>Sunbird DCIM</th>
+            <th>PRTG</th>
+            <th>SolarWinds NPM</th>
+            <th>Atlas v3.19</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>سالن / رک سه‌بعدی + عکس مدل</td>
+            <td class="yes">قوی (حرارت/باس‌وی هم)</td>
+            <td class="no">ندارد</td>
+            <td class="no">ندارد</td>
+            <td class="yes">سالن، In-Row، UPS، فیس‌پلیت</td>
+          </tr>
+          <tr>
+            <td>کشف CDP/LLDP و گراف</td>
+            <td class="mid">دیاگرام از دیتابیس مدار</td>
+            <td class="yes">سنسور + UVexplorer</td>
+            <td class="yes">NetPath / topology</td>
+            <td class="yes">Walk CDP/LLDP روی فابریک</td>
+          </tr>
+          <tr>
+            <td>پایش ICMP/SNMP جدا از کشف</td>
+            <td class="mid">Power IQ جدا</td>
+            <td class="yes">هسته محصول</td>
+            <td class="yes">هسته محصول</td>
+            <td class="yes">صفحهٔ /monitoring</td>
+          </tr>
+          <tr>
+            <td>IPAM / VLAN / مدار WAN</td>
+            <td class="mid">پورت و ظرفیت</td>
+            <td class="no">تمرکز پایش</td>
+            <td class="mid">IPAM ماژول جدا</td>
+            <td class="yes">در همان پروژه</td>
+          </tr>
+          <tr>
+            <td>کتابخانه مدل با عکس</td>
+            <td class="yes">۴۴k+ مدل</td>
+            <td class="no">—</td>
+            <td class="no">—</td>
+            <td class="yes">۶٫۳k مدل / ۵٫۳k عکس</td>
+          </tr>
+          <tr>
+            <td>رابط فارسی + استقرار IIS داخلی</td>
+            <td class="no">انگلیسی / ابری یا ویندوز</td>
+            <td class="mid">چندزبانه</td>
+            <td class="no">انگلیسی</td>
+            <td class="yes">RTL فارسی، Waitress+IIS</td>
+          </tr>
+          <tr>
+            <td>نقشه حرارتی / PDU پریز</td>
+            <td class="yes">کامل</td>
+            <td class="no">—</td>
+            <td class="no">—</td>
+            <td class="mid">در نقشه راه</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mod" id="more">
+    <div class="wrap">
+      <p class="kicker">ALSO IN THE PRODUCT</p>
+      <h2>ماژول‌های دیگر سامانه</h2>
+      <table>
+        <thead>
+          <tr><th>مسیر</th><th>کار</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>زیرساخت → تجهیزات / جدول رک</td><td>Elevation U با عکس مدل</td></tr>
+          <tr><td>گالری تصاویر / بکاپ کانفیگ</td><td>مستند visio و آرشیو کانفیگ سوییچ</td></tr>
+          <tr><td>انبار و خرید</td><td>گردش کالا و رسید نصب</td></tr>
+          <tr><td>نقشه ادغام‌شده هلدینگ</td><td>لینک بین پروژه‌های چند شهر</td></tr>
+          <tr><td>گزارش‌ها / جستجو / Visio</td><td>ممیزی CSV/PDF و ورود پلان</td></tr>
+          <tr><td>تنظیمات</td><td>SNMP، شهر، RBAC</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>اسکرین‌ها از سامانهٔ سازمانی <strong>دیتاسنتر مرکزی اطلس</strong> روی شبکه داخلی گرفته شده‌اند (سپتامبر ۲۰۲۶). الگوی صفحه از گالری
+        <a href="https://www.sunbirddcim.com/dcim-screen-shots">Sunbird Product Screenshots</a>
+        و
+        <a href="https://www.paessler.com/monitoring/network/graphical-network-monitoring">PRTG graphical monitoring</a>
+        است.</p>
+      <p>فایل‌ها: <code>docs/catalog/index.html</code> و <code>docs/catalog/shots/</code> · چاپ از مرورگر = PDF کاتالوگ.</p>
+    </div>
+  </footer>
+  <script>
+    const chips = document.querySelectorAll(".chip[data-filter]");
+    const tiles = document.querySelectorAll(".tile");
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chips.forEach((c) => c.classList.remove("is-on"));
+        chip.classList.add("is-on");
+        const f = chip.dataset.filter;
+        tiles.forEach((t) => {
+          t.style.display = f === "all" || t.dataset.cat === f ? "" : "none";
+        });
+      });
+    });
+  </script>
+</body>
+</html>

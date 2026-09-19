@@ -1,75 +1,65 @@
-# Atlas
+<div align="center">
+  <h1>Atlas</h1>
+  <p><b>DCIM · IPAM · NMS</b> — interactive product catalog for a large infrastructure platform</p>
+  <p>
+    <a href="https://ramincsy.github.io/atlas-showcase/"><img src="https://img.shields.io/badge/Open%20interactive%20catalog-0ea5e9?style=for-the-badge" alt="catalog" /></a>
+    <a href="https://www.ramioo.com/projects/network-twin"><img src="https://img.shields.io/badge/ramioo.com-project-111827?style=for-the-badge" alt="site" /></a>
+    <a href="https://github.com/ramincsy/ramioo-showcase"><img src="https://img.shields.io/badge/ramioo-showcase-hub-334155?style=for-the-badge" alt="hub" /></a>
+  </p>
+</div>
 
-**DCIM · IPAM · NMS** — on-prem Persian/RTL infrastructure platform
-
-[Project](https://www.ramioo.com/projects/network-twin) · [Showcase hub](https://github.com/ramincsy/ramioo-showcase)
-
-_Public product window only. Private implementation lives in `netdocs` (not open source)._
+> Public product window. Implementation stays private.  
+> **Tip:** open the [interactive catalog](https://ramincsy.github.io/atlas-showcase/) for real click-to-zoom lightbox.
 
 ---
 
-## What it is
+### و · Demo reel (motion)
 
-**Atlas** documents and operates multi-site network and datacenter environments: 3D halls, racks, power paths, VLANs/IPs, live discovery, and executive dashboards — with a large equipment model library (front/rear photos).
+<p align="center">
+  <img src="docs/gifs/demo-reel.gif" alt="Atlas demo reel" width="720" />
+</p>
 
+### ب · Story tour
 
-## Equipment library
+<p align="center">
+  <img src="docs/gifs/story-tour.gif" alt="Atlas story frames" width="640" />
+</p>
 
-Atlas includes a growing equipment model library with front and rear references for common network, server, storage, power, and cooling assets.
+### هـ · Capability map → screens
 
-## Demo geography
+<p align="center">
+  <img src="docs/capability-map.png" alt="Atlas capability map" width="900" />
+</p>
 
-The product window includes multi-site examples spanning data centers, campuses, branch sites, offices, labs, and industrial facilities.
+Jump in the [interactive catalog](https://ramincsy.github.io/atlas-showcase/): DCIM · Network · IPAM · Power · Ops · Catalog
 
-## Links
+### الف · Ken Burns zooms
 
-[Project page](https://www.ramioo.com/projects/network-twin)
+| DCIM | Topology | IPAM |
+|:---:|:---:|:---:|
+| <img src="docs/gifs/kb-dcim-3d.gif" width="280" alt="DCIM zoom" /> | <img src="docs/gifs/kb-topology.gif" width="280" alt="Topology zoom" /> | <img src="docs/gifs/kb-ipam.gif" width="280" alt="IPAM zoom" /> |
 
-[Showcase hub](https://github.com/ramincsy/ramioo-showcase)
+| Dashboard | Catalog |
+|:---:|:---:|
+| <img src="docs/gifs/kb-dashboard.gif" width="280" alt="Dashboard zoom" /> | <img src="docs/gifs/kb-catalog.gif" width="280" alt="Catalog zoom" /> |
 
-## Screenshots
-![Atlas UPS dashboard](docs/screenshots/07-ups.png)
-![Atlas network discovery](docs/screenshots/08-discovery.png)
-![Atlas monitoring](docs/screenshots/09-monitoring.png)
-![Atlas equipment catalog](docs/screenshots/10-catalog.png)
-![Atlas WAN circuits](docs/screenshots/11-circuits.png)
-![Atlas site layout](docs/screenshots/12-site-layout.png)
+### ج · Wide vs zoom
 
-## Datacenter and NOC scenes
+| | Wide | Zoom detail |
+|--|:--:|:--:|
+| **DCIM** | <img src="docs/wide-zoom/dcim-wide.jpg" width="360" /> | <img src="docs/wide-zoom/dcim-zoom.jpg" width="360" /> |
+| **Topology** | <img src="docs/wide-zoom/topology-wide.jpg" width="360" /> | <img src="docs/wide-zoom/topology-zoom.jpg" width="360" /> |
+| **IPAM** | <img src="docs/wide-zoom/ipam-wide.jpg" width="360" /> | <img src="docs/wide-zoom/ipam-zoom.jpg" width="360" /> |
 
-![Atlas server hall scene](docs/scenes/scene-server-hall.png)
-![Atlas NOC scene](docs/scenes/scene-noc.png)
-![Atlas campus scene](docs/scenes/scene-campus.png)
-![Atlas MMR scene](docs/scenes/scene-mmr.png)
-![Atlas UPS scene](docs/scenes/scene-ups.png)
-![Atlas datacenter cover](docs/scenes/cover-atlas-dc.png)
-![Atlas lab NOC cover](docs/scenes/cover-lab-noc.png)
-![Atlas branch site cover](docs/scenes/cover-branch.png)
-![Atlas HQ office cover](docs/scenes/cover-hq-office.png)
-![Atlas greenhouse cover](docs/scenes/cover-greenhouse.png)
-![Atlas refinery cover](docs/scenes/cover-refinery.png)
-A selection of Atlas UI views across dashboards, DCIM, topology, IPAM, UPS, discovery, monitoring, catalog, circuits, and site layout.
+### د · Interactive catalog (real zoom)
 
-![Atlas executive dashboard](docs/screenshots/01-dashboard.png)
-![Atlas projects portfolio](docs/screenshots/02-projects.png)
-![Atlas environment overview](docs/screenshots/03-overview.png)
-![Atlas 3D DCIM hall](docs/screenshots/04-dcim-3d.png)
-![Atlas DCIM cooling view](docs/screenshots/04b-dcim-cooling.png)
-![Atlas DCIM UPS view](docs/screenshots/04c-dcim-ups.png)
-![Atlas DCIM top view](docs/screenshots/04d-dcim-top.png)
-![Atlas network topology](docs/screenshots/05-topology.png)
-![Atlas IPAM VLAN view](docs/screenshots/06-ipam-vlan.png)
+**[Open lightbox catalog →](https://ramincsy.github.io/atlas-showcase/)**  
+Click any shot to zoom. Use ← → and Esc. Includes story strip, Ken Burns, wide/zoom pairs, and grouped screens by capability.
 
-## Capabilities
+---
 
-**DCIM** — 3D server hall, rack elevation (U), In-Row, UPS A/B, site plan (MMR, white space, NOC)
+### What Atlas is
 
-**IPAM** — VLAN / CIDR / gateway, free vs used capacity, CSV import/export
+On-prem Persian/RTL platform for multi-site **datacenter + network** operations: 3D DCIM, IPAM, discovery, SNMP monitoring, WAN circuits, and a large equipment model library.
 
-**Network** — Spine-Leaf topology, CDP/LLDP discovery, Visio workflows
-
-**NMS** — ICMP/SNMP, weathermap, thresholds, alerts
-
-**WAN** — DIA, MPLS, P2P, fiber circuits, ISP map, contract dates
-
-**Ops** — multi-site portfolio, inventory, reports (CSV/PDF), RBAC, Persian RTL, on-prem IIS
+**Contact:** [ramioo.com](https://www.ramioo.com) · [ramincsywork@gmail.com](mailto:ramincsywork@gmail.com) · [0914 666 50 68](tel:+989146665068)

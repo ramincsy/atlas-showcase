@@ -7,6 +7,8 @@
     <a href="https://github.com/ramincsy/ramioo-showcase"><img src="https://img.shields.io/badge/ramioo-showcase-hub-334155?style=for-the-badge" alt="hub" /></a>
   </p>
 </div>
+[![Open live catalog / کاتالوگ زنده](https://img.shields.io/badge/Open%20live%20catalog-%DA%A9%D8%A7%D8%AA%D8%A7%D9%84%D9%88%DA%AF%20%D8%B2%D9%86%D8%AF%D9%87-0ea5e9?style=for-the-badge)](https://ramincsy.github.io/atlas-showcase/)
+
 
 > Public product window. Implementation stays private.  
 > **Tip:** open the [interactive catalog](https://ramincsy.github.io/atlas-showcase/) for real click-to-zoom lightbox.

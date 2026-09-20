@@ -1,67 +1,76 @@
 <div align="center">
-  <h1>Atlas</h1>
-  <p><b>DCIM · IPAM · NMS</b> — interactive product catalog for a large infrastructure platform</p>
-  <p>
-    <a href="https://ramincsy.github.io/atlas-showcase/"><img src="https://img.shields.io/badge/Open%20live%20catalog-%DA%A9%D8%A7%D8%AA%D8%A7%D9%84%D9%88%DA%AF%20%D8%B2%D9%86%D8%AF%D9%87-0ea5e9?style=for-the-badge" alt="Open live catalog / کاتالوگ زنده" /></a>
-    <a href="https://www.ramioo.com/projects/network-twin"><img src="https://img.shields.io/badge/ramioo.com-project-111827?style=for-the-badge" alt="site" /></a>
-    <a href="https://github.com/ramincsy/ramioo-showcase"><img src="https://img.shields.io/badge/ramioo-showcase-hub-334155?style=for-the-badge" alt="hub" /></a>
-  </p>
+
+# Atlas
+
+**DCIM · IPAM · NMS** — interactive public catalog for a large on‑prem infrastructure platform
+
+<p>
+  <a href="https://ramincsy.github.io/atlas-showcase/"><img src="https://img.shields.io/badge/▶%20Open%20live%20demo%20(GitHub%20Pages)-0ea5e9?style=for-the-badge" alt="Open live demo on GitHub Pages" /></a>
+</p>
+
+<p><a href="https://ramincsy.github.io/atlas-showcase/"><b>https://ramincsy.github.io/atlas-showcase/</b></a></p>
+
+<p>
+  <a href="https://www.ramioo.com/projects/network-twin"><img src="https://img.shields.io/badge/ramioo.com-project-111827?style=for-the-badge" alt="ramioo project" /></a>
+  <a href="https://github.com/ramincsy/ramioo-showcase"><img src="https://img.shields.io/badge/ramioo-showcase-hub-334155?style=for-the-badge" alt="showcase hub" /></a>
+</p>
+
 </div>
 
-
-
-> Public product window. Implementation stays private.  
-> **Tip:** open the [interactive catalog](https://ramincsy.github.io/atlas-showcase/) for real click-to-zoom lightbox.
+> **Demo first:** the live product window is on **GitHub Pages** (click‑to‑zoom lightbox). This repo is a public catalog only — implementation stays private.
 
 ---
 
-### و · Demo reel (motion)
+## Live catalog (GitHub Pages)
+
+| | |
+|:--|:--|
+| **Open demo** | [ramincsy.github.io/atlas-showcase](https://ramincsy.github.io/atlas-showcase/) |
+| What you get | Interactive gallery — story strip, capability groups, click‑to‑zoom |
+| Controls | Click any shot · ← → · Esc |
+
+---
+
+## Preview
 
 <p align="center">
-  <img src="docs/gifs/demo-reel.gif" alt="Atlas demo reel" width="720" />
+  <a href="https://ramincsy.github.io/atlas-showcase/"><img src="docs/shots/01-dashboard.png" alt="Atlas dashboard — open live catalog" width="860" /></a>
 </p>
 
-### ب · Story tour
+<p align="center"><b><a href="https://ramincsy.github.io/atlas-showcase/">Open the interactive catalog →</a></b></p>
 
-<p align="center">
-  <img src="docs/gifs/story-tour.gif" alt="Atlas story frames" width="640" />
-</p>
-
-### هـ · Capability map → screens
-
-<p align="center">
-  <img src="docs/capability-map.png" alt="Atlas capability map" width="900" />
-</p>
-
-Jump in the [interactive catalog](https://ramincsy.github.io/atlas-showcase/): DCIM · Network · IPAM · Power · Ops · Catalog
-
-### الف · Ken Burns zooms
-
-| DCIM | Topology | IPAM |
+| DCIM 3D | Topology | IPAM |
 |:---:|:---:|:---:|
-| <img src="docs/gifs/kb-dcim-3d.gif" width="280" alt="DCIM zoom" /> | <img src="docs/gifs/kb-topology.gif" width="280" alt="Topology zoom" /> | <img src="docs/gifs/kb-ipam.gif" width="280" alt="IPAM zoom" /> |
+| <a href="https://ramincsy.github.io/atlas-showcase/"><img src="docs/shots/04-dcim-3d.png" width="280" alt="DCIM" /></a> | <a href="https://ramincsy.github.io/atlas-showcase/"><img src="docs/shots/05-topology.png" width="280" alt="Topology" /></a> | <a href="https://ramincsy.github.io/atlas-showcase/"><img src="docs/shots/06-ipam-vlan.png" width="280" alt="IPAM" /></a> |
 
-| Dashboard | Catalog |
-|:---:|:---:|
-| <img src="docs/gifs/kb-dashboard.gif" width="280" alt="Dashboard zoom" /> | <img src="docs/gifs/kb-catalog.gif" width="280" alt="Catalog zoom" /> |
-
-### ج · Wide vs zoom
-
-| | Wide | Zoom detail |
-|--|:--:|:--:|
-| **DCIM** | <img src="docs/wide-zoom/dcim-wide.jpg" width="360" /> | <img src="docs/wide-zoom/dcim-zoom.jpg" width="360" /> |
-| **Topology** | <img src="docs/wide-zoom/topology-wide.jpg" width="360" /> | <img src="docs/wide-zoom/topology-zoom.jpg" width="360" /> |
-| **IPAM** | <img src="docs/wide-zoom/ipam-wide.jpg" width="360" /> | <img src="docs/wide-zoom/ipam-zoom.jpg" width="360" /> |
-
-### د · Interactive catalog (real zoom)
-
-**[Open lightbox catalog →](https://ramincsy.github.io/atlas-showcase/)**  
-Click any shot to zoom. Use ← → and Esc. Includes story strip, Ken Burns, wide/zoom pairs, and grouped screens by capability.
+| Monitoring | Catalog | Circuits |
+|:---:|:---:|:---:|
+| <a href="https://ramincsy.github.io/atlas-showcase/"><img src="docs/shots/09-monitoring.png" width="280" alt="Monitoring" /></a> | <a href="https://ramincsy.github.io/atlas-showcase/"><img src="docs/shots/10-catalog.png" width="280" alt="Catalog" /></a> | <a href="https://ramincsy.github.io/atlas-showcase/"><img src="docs/shots/11-circuits.png" width="280" alt="Circuits" /></a> |
 
 ---
 
-### What Atlas is
+## What Atlas is
 
-On-prem Persian/RTL platform for multi-site **datacenter + network** operations: 3D DCIM, IPAM, discovery, SNMP monitoring, WAN circuits, and a large equipment model library.
+On‑prem Persian/RTL platform for multi‑site **datacenter + network** operations: 3D DCIM, IPAM, discovery, SNMP monitoring, WAN circuits, and a large equipment model library.
+
+Surfaces in the live catalog: **DCIM · Network · IPAM · Power · Ops · Catalog**
+
+---
+
+<div dir="rtl" lang="fa" align="right">
+
+### فارسی
+
+این مخزن فقط یک <b>کاتالوگ عمومی</b> از رابط Atlas است. برای دیدن دموی تعاملی (زوم، گالری و تور محصول) به GitHub Pages بروید:
+
+<a href="https://ramincsy.github.io/atlas-showcase/"><b>مشاهده کاتالوگ زنده Atlas</b></a>
+
+Atlas یک سامانهٔ سازمانی زیرساخت و شبکه است (DCIM، IPAM، مانیتورینگ و عملیات چندسایته). سورس و جزئیات پیاده‌سازی در این مخزن منتشر نمی‌شود.
+
+</div>
+
+---
 
 **Contact:** [ramioo.com](https://www.ramioo.com) · [ramincsywork@gmail.com](mailto:ramincsywork@gmail.com) · [0914 666 50 68](tel:+989146665068)
+
+© ramioo

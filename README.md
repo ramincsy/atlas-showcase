@@ -8,6 +8,10 @@
   <a href="https://ramincsy.github.io/atlas-showcase/"><img src="https://img.shields.io/badge/▶%20Open%20live%20demo%20(GitHub%20Pages)-0ea5e9?style=for-the-badge" alt="Open live demo on GitHub Pages" /></a>
 </p>
 
+<p>
+  <a href="https://ramincsy.github.io/atlas-showcase/"><img src="docs/card.jpg" alt="Atlas — network monitoring and infrastructure documentation" width="860" /></a>
+</p>
+
 <p><a href="https://ramincsy.github.io/atlas-showcase/"><b>https://ramincsy.github.io/atlas-showcase/</b></a></p>
 
 <p>
